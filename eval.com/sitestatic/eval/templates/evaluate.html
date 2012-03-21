@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title>DTG Human Evaluation</title>
+	<script src='http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js'></script>
+	<script src='/eval/media/js/eval.js'></script>
+</head>
+<body>
+
+	<h1>Hello DTG!</h1>
+
+	<div>
+		<a href='{{ url }}' target='_blank'>{{ url }}</a>
+		<br/><br/>
+		Original Tags: {{ori_tags}}
+	</div>
+
+	<div>
+		{% for tag in all_tags %}
+		<label class='all_unique_tags'>{{ tag }} </label>
+		{% endfor %}
+	</div>
+
+	<div id='demo'>Drag Me</div>
+
+	<div>
+		Tag Suggestions:
+		<br/><br/>
+		<table border='1'>
+			<tr>
+				<th>Popularity</th>
+				{% for tag in pop_tags %}
+				<td class='{{ tag }}'>{{ tag }}</td>
+				{% endfor %}
+			</tr>
+			<tr>
+				<th>TF-IRF</th>
+				{% for tag in irf_tags %}
+				<td class='{{ tag }}'>{{ tag }}</td>
+				{% endfor %}
+			</tr>
+			<tr>
+				<th>LDA</th>
+				{% for tag in lda_tags %}
+				<td class='{{ tag }}'>{{ tag }}</td>
+				{% endfor %}
+			</tr>
+			<tr>
+				<th>Diverse LDA</th>
+				{% for tag in dlda_tags %}
+				<td class='{{ tag }}'>{{ tag }}</td>
+				{% endfor %}
+			</tr>
+		</table>
+	</div>
+
+	<form id='votes' onsubmit='return checkForm(this);' action='.' method='post'>
+		<input type='checkbox' name='pop' id = 'id_pop' value='value_pop' /> Popularity <br/>
+		<input type='checkbox' name='irf' id = 'id_irf' value='irf' /> TF-IRF <br/>
+		<input type='checkbox' name='lda' id = 'id_lda' value='lda' /> LDA <br/>
+		<input type='checkbox' name='dlda' id = 'id_dlda' value='dlda' /> Diverse LDA <br/>
+		<br/>
+		<input type='hidden' name='id' value='{{id}}' />
+		<input type='submit' value='Submit' />
+	</form>
+
+</body>

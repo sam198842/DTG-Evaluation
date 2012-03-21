@@ -1,0 +1,39 @@
+.yui3-dd-proxy {
+	test-align: left;
+}
+
+#group {
+	border: 2px solid black;
+	padding: 5px;
+	margin: 5px;
+	zoom: 1;
+	height: 200px;
+	width: 890px;
+}
+
+#group  ul {
+	border: 2px solid black;
+	margin: 5px;
+	width: 160px;
+	height: 180px;
+	float: left;
+	padding: 2px;
+	zoom: 1;
+	position: relative;
+	overflow: auto;
+}
+
+#group ul li {
+	padding-left: 0px;
+	padding: 0px;
+	margin: 2px;
+	list-style-type: none;
+	/*background-color: #8DD5E7;*/
+	background-color: CornflowerBlue;
+	border: 1px solid #004C6D;
+	cursor: move;
+	zoom: 1;
+	position: ralative;
+}
+
+
